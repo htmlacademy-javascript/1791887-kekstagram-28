@@ -2,7 +2,7 @@ root: true
 
 parserOptions:
   ecmaVersion: 2022
-  sourceType: "module"
+  sourceType: module
 
 env:
   es2022: true
@@ -12,5 +12,7 @@ globals:
   noUiSlider: readonly
   Pristine: readonly
 
-extends:
-  "htmlacademy/vanilla"
+extends: "htmlacademy/vanilla"
+
+rules:
+  indent: [error, tab]

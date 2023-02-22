@@ -1,0 +1,9 @@
+{
+	"recommendations": [
+		"ms-vsliveshare.vsliveshare",
+		"github.vscode-pull-request-github",
+		"editorconfig.editorconfig",
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode"
+	]
+}

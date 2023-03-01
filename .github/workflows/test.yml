@@ -1,7 +1,4 @@
 on:
-  push:
-    branches:
-      - master
   pull_request:
     branches: '*'
 
@@ -32,12 +29,3 @@ jobs:
 
     - name: Test 🧪
       run:  pnpm test:once
-
-    - name: Build 🏗
-      run: pnpm build
-
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        folder: build
-        branch: deploy

@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
-import { checkString } from './functions';
-import { isPalindrome } from './functions';
-import { extractNumber } from './functions';
-import { myPadStart } from './functions';
+import { checkString } from './utils';
+import { isPalindrome } from './utils';
+import { extractNumber } from './utils';
+import { myPadStart } from './utils';
 
 describe('Функция для проверки длины строки.', () => {
 	const TEST_STRING = 'проверяемая строка';

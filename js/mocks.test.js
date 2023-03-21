@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest';
-
-const mockedPhotos = [];
+import { getPictures } from './mocks';
 
 describe.todo('Функция для проверки длины строки.', () => {
+	const mockedPhotos = getPictures();
 	const { length } = 	mockedPhotos;
 
 	const ids = new Set();

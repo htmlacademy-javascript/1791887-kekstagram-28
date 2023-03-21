@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { getPictures } from './mocks';
 
-describe.todo('Функция для проверки длины строки.', () => {
+describe('Функция для проверки длины строки.', () => {
 	const mockedPhotos = getPictures();
 	const { length } = 	mockedPhotos;
 

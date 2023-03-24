@@ -52,7 +52,7 @@ const createComment = () => ({
  * @param {number} id
  */
 const createPicture = (id) => ({
-	id: id,
+	id,
 	url: `photos/${id}.jpg`,
 	description: getRandomArrayElement(DESCRIPTIONS),
 	likes: getRandomInteger(LIKE_MIN_COUNT, LIKE_MAX_COUNT),

@@ -34,4 +34,10 @@ const createIdGenerator = () => {
 
 const isEscapeKey = (evt) => evt.key === 'Escape';
 
-export {getRandomInteger, getRandomArrayElement, createIdGenerator, isEscapeKey};
+/**
+ * ищет шаблон по id и берет из него 1й элемент
+ * @param {string} id
+ * @returns {HTMLElement}
+ */
+const getTemplate = (id) => document.getElementById(id).contentEditable.firstElementChild;
+export {getRandomInteger, getRandomArrayElement, createIdGenerator, isEscapeKey, getTemplate};

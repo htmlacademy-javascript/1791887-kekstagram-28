@@ -39,5 +39,5 @@ const isEscapeKey = (evt) => evt.key === 'Escape';
  * @param {string} id
  * @returns {HTMLElement}
  */
-const getTemplate = (id) => document.getElementById(id).contentEditable.firstElementChild;
+const getTemplate = (id) => document.getElementById(id).content.firstElementChild;
 export {getRandomInteger, getRandomArrayElement, createIdGenerator, isEscapeKey, getTemplate};

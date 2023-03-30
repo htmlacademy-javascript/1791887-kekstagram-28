@@ -5,45 +5,48 @@ const COMMENTS_PACK_SIZE = 5;
 const template = getTemplate('comment');
 const commentList = document.querySelector('.social__comments');
 const commentsCount = document.querySelector('.social__comment-count');
-const commentsLoader = document.querySelector('.comments-loader');
+const loadButton = document.querySelector('.social__comments-loader');
 
 let savedComment = [];
-
-commentsCount.classList.remove('hidden');
-//commentsLoader.classList.remove('hidden');
 
 const renderComment = (comment) => {
 	const newComment = template.cloneNode(true);
 	newComment.querySelector('.social__picture').src = comment.avatar;
 	newComment.querySelector('.social__text').textContent = comment.message;
-	commentList.append(newComment);
+	return newComment;
 };
 
-const onButtonClick = () => {
-	const showedComment = commentList.children.length;
-	let endListComments = showedComment + COMMENTS_PACK_SIZE;
-	const allCommentsShow = endListComments >= savedComment.length;
+const onLoadButtonClick = () => {
+	const allCommentsAmount = savedComment.length;
+	const showedAmount = commentList.children.length;
+	let endOfSlice = showedAmount + COMMENTS_PACK_SIZE;
+	const allCommentsShow = endOfSlice >= allCommentsAmount;
 
-	endListComments = allCommentsShow ? savedComment.length : endListComments;
+	endOfSlice = allCommentsShow ? allCommentsAmount : endOfSlice;
 
-	const slicedComments = savedComment.slice(showedComment, endListComments);
+	const slicedComments = savedComment.slice(showedAmount, endOfSlice);
 
+	//renderPack
+
+	//const renderPack = (commentList, slicedComments, renderComment ) => {
+
+	//};
 	const commentFragment = document.createDocumentFragment();
 	for (const comment of slicedComments) {
-		commentFragment.appendChild(renderComment(comment));
+		commentFragment.append(renderComment(comment));
 	}
-	commentList.appendChild(commentFragment);
+	commentList.append(commentFragment);
 
-	commentsCount.textContent = `${endListComments} из ${savedComment.length} комментариев`;
+	commentsCount.textContent = `${endOfSlice} из ${allCommentsAmount} комментариев`;
 
-	commentsLoader.hidden = allCommentsShow;
+	loadButton.hidden = allCommentsShow;
 };
 
-commentsLoader.addEventListener('click', onButtonClick);
+loadButton.addEventListener('click', onLoadButtonClick);
 
 const renderComments = (comments) => {
 	savedComment = comments;
-	commentsLoader.click();
+	loadButton.click();
 };
 
 const clearComments = () => {

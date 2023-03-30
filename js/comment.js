@@ -1,4 +1,4 @@
-import {getTemplate} from './utils.js';
+import {getTemplate, renderPack} from './utils.js';
 
 const COMMENTS_PACK_SIZE = 5;
 
@@ -26,16 +26,7 @@ const onLoadButtonClick = () => {
 
 	const slicedComments = savedComment.slice(showedAmount, endOfSlice);
 
-	//renderPack
-
-	//const renderPack = (commentList, slicedComments, renderComment ) => {
-
-	//};
-	const commentFragment = document.createDocumentFragment();
-	for (const comment of slicedComments) {
-		commentFragment.append(renderComment(comment));
-	}
-	commentList.append(commentFragment);
+	renderPack(commentList, slicedComments, renderComment);
 
 	commentsCount.textContent = `${endOfSlice} из ${allCommentsAmount} комментариев`;
 
@@ -43,6 +34,7 @@ const onLoadButtonClick = () => {
 };
 
 loadButton.addEventListener('click', onLoadButtonClick);
+
 
 const renderComments = (comments) => {
 	savedComment = comments;

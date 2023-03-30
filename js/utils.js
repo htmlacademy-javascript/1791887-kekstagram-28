@@ -38,13 +38,13 @@ const createIdGenerator = () => {
  * @param {Array<T>} dataItems
  * @param {(item: T) => Element} renderFunction
  */
-const renderPack = (wrapper, dataItems, renderFunction) => {
+const renderPack = (wrapper, data, renderFunction) => {
 
-	const commentFragment = document.createDocumentFragment();
-	for (const item of dataItems) {
-		commentFragment.append(renderFunction(item));
+	const Fragment = document.createDocumentFragment();
+	for (const item of data) {
+		Fragment.append(renderFunction(item));
 	}
-	wrapper.append(commentFragment);
+	wrapper.append(Fragment);
 };
 
 /**

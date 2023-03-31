@@ -32,12 +32,31 @@ const createIdGenerator = () => {
 	};
 };
 
-const isEscapeKey = (evt) => evt.key === 'Escape';
+/**
+ *
+ * @param {Element} wrapper
+ * @param {Array<T>} dataItems
+ * @param {(item: T) => Element} renderFunction
+ */
+const renderPack = (wrapper, data, renderFunction) => {
+
+	const Fragment = document.createDocumentFragment();
+	for (const item of data) {
+		Fragment.append(renderFunction(item));
+	}
+	wrapper.append(Fragment);
+};
+
+/**
+ *
+ * @param {KeyboardEvent} evt
+ */
+const isEscapeKey = ({key}) => key === 'Escape';
 
 /**
  * ищет шаблон по id и берет из него 1й элемент
  * @param {string} id
  * @returns {HTMLElement}
  */
-const getTemplate = (id) => document.getElementById(id).contentEditable.firstElementChild;
-export {getRandomInteger, getRandomArrayElement, createIdGenerator, isEscapeKey, getTemplate};
+const getTemplate = (id) => document.getElementById(id).content.firstElementChild;
+export {getRandomInteger, getRandomArrayElement, createIdGenerator, isEscapeKey, getTemplate, renderPack};

@@ -32,7 +32,8 @@
 			<section class="img-upload">
 				<div class="img-upload__wrapper">
 					<h2 class="img-upload__title  visually-hidden">Загрузка фотографии</h2>
-					<form class="img-upload__form" id="upload-select-image" method="post" enctype="multipart/form-data"
+					<form class="img-upload__form" id="upload-select-image"
+						action=" https://28.javascript.pages.academy/kekstagram" method="post" enctype="multipart/form-data"
 						autocomplete="off">
 
 						<!-- Изначальное состояние поля для загрузки изображения -->
@@ -76,7 +77,8 @@
 											<input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-none"
 												value="none" checked>
 											<label for="effect-none" class="effects__label">
-												<span class="effects__preview  effects__preview--none">Превью фото без эффекта</span>
+												<span class="effects__preview  effects__preview--none">Превью фото без
+													эффекта</span>
 												Оригинал
 											</label>
 										</li>
@@ -84,7 +86,8 @@
 											<input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-chrome"
 												value="chrome">
 											<label for="effect-chrome" class="effects__label">
-												<span class="effects__preview  effects__preview--chrome">Превью эффекта Хром</span>
+												<span class="effects__preview  effects__preview--chrome">Превью эффекта
+													Хром</span>
 												Хром
 											</label>
 										</li>
@@ -92,7 +95,8 @@
 											<input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-sepia"
 												value="sepia">
 											<label for="effect-sepia" class="effects__label">
-												<span class="effects__preview  effects__preview--sepia">Превью эффекта Сепия</span>
+												<span class="effects__preview  effects__preview--sepia">Превью эффекта
+													Сепия</span>
 												Сепия
 											</label>
 										</li>
@@ -100,7 +104,8 @@
 											<input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-marvin"
 												value="marvin">
 											<label for="effect-marvin" class="effects__label">
-												<span class="effects__preview  effects__preview--marvin">Превью эффекта Марвин</span>
+												<span class="effects__preview  effects__preview--marvin">Превью эффекта
+													Марвин</span>
 												Марвин
 											</label>
 										</li>
@@ -108,7 +113,8 @@
 											<input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-phobos"
 												value="phobos">
 											<label for="effect-phobos" class="effects__label">
-												<span class="effects__preview  effects__preview--phobos">Превью эффекта Фобос</span>
+												<span class="effects__preview  effects__preview--phobos">Превью эффекта
+													Фобос</span>
 												Фобос
 											</label>
 										</li>
@@ -116,7 +122,8 @@
 											<input type="radio" class="effects__radio  visually-hidden" name="effect" id="effect-heat"
 												value="heat">
 											<label for="effect-heat" class="effects__label">
-												<span class="effects__preview  effects__preview--heat">Превью эффекта Зной</span>
+												<span class="effects__preview  effects__preview--heat">Превью эффекта
+													Зной</span>
 												Зной
 											</label>
 										</li>
@@ -126,10 +133,12 @@
 								<!-- Добавление хэш-тегов и комментария к изображению -->
 								<fieldset class="img-upload__text text">
 									<div class="img-upload__field-wrapper">
-										<input class="text__hashtags" name="hashtags" placeholder="#ХэшТег">
+										<input class="text__hashtags" name="hashtags" placeholder="#ХэшТег" minlength="2">
 									</div>
 									<div class="img-upload__field-wrapper">
-										<textarea class="text__description" name="description" placeholder="Ваш комментарий..."></textarea>
+										<textarea class="text__description" name="description" placeholder="Ваш комментарий..."
+											data-pristine-maxlength="140"
+											data-pristine-maxlength-message="Максимальная длина 140 символов"></textarea>
 									</div>
 								</fieldset>
 
@@ -164,7 +173,7 @@
 					</div>
 
 					<!-- Комментарии к изображению -->
-					<div class="social__comment-count">5 из 125</span> комментариев</div>
+					<div class="social__comment-count">5 из 125 комментариев</div>
 					<ul class="social__comments">
 
 					</ul>
@@ -245,6 +254,7 @@
 	<template id="messages">
 		<div class="img-upload__message  img-upload__message--loading">Загружаем...</div>
 	</template>
+	<script src="/vendor/pristine/pristine.min.js"></script>
 	<script src="js/main.js" type="module"></script>
 </body>
 

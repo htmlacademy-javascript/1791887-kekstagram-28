@@ -40,11 +40,11 @@ const createIdGenerator = () => {
  */
 const renderPack = (wrapper, data, renderFunction) => {
 
-	const Fragment = document.createDocumentFragment();
+	const fragment = document.createDocumentFragment();
 	for (const item of data) {
-		Fragment.append(renderFunction(item));
+		fragment.append(renderFunction(item));
 	}
-	wrapper.append(Fragment);
+	wrapper.append(fragment);
 };
 
 /**

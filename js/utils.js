@@ -59,4 +59,13 @@ const isEscapeKey = ({key}) => key === 'Escape';
  * @returns {HTMLElement}
  */
 const getTemplate = (id) => document.getElementById(id).content.firstElementChild;
-export {getRandomInteger, getRandomArrayElement, createIdGenerator, isEscapeKey, getTemplate, renderPack};
+
+/**
+ * @param {Element} modalElement
+ */
+const toggleModalClasses = (modalElement, willBeOpened = true) => {
+	modalElement.classList.toggle('hidden', !willBeOpened);
+	document.body.classList.toggle('modal-open', willBeOpened);
+};
+
+export {getRandomInteger, getRandomArrayElement, createIdGenerator, isEscapeKey, getTemplate, renderPack, toggleModalClasses};

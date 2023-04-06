@@ -1,7 +1,6 @@
 import { renderComments, clearComments } from './comment.js';
-import {isEscapeKey} from './utils.js';
+import {isEscapeKey, toggleModalClasses} from './utils.js';
 
-const body = document.body;
 const bigPicture = document.querySelector('.big-picture');
 const userModalCloseElement = bigPicture.querySelector('.cancel');
 
@@ -18,13 +17,8 @@ const onDocumentEscapeKeydown = (evt) => {
 	}
 };
 
-const toggleModalClasses = (willBeOpened = true) => {
-	bigPicture.classList.toggle('hidden', !willBeOpened);
-	body.classList.toggle('modal-open', willBeOpened);
-};
-
 function closeUserModal () {
-	toggleModalClasses(false);
+	toggleModalClasses(bigPicture, false);
 
 	clearComments();
 }
@@ -33,7 +27,7 @@ userModalCloseElement.addEventListener('click', () => closeUserModal ());
 
 
 const showBigPicture = (data) => {
-	toggleModalClasses(true);
+	toggleModalClasses(bigPicture, true);
 
 	document.addEventListener('keydown', onDocumentEscapeKeydown);
 	renderPictureData(data);

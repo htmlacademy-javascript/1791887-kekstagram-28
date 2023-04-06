@@ -10,9 +10,8 @@ env:
 
 globals:
   noUiSlider: readonly
-  Pristine: readonly
 
-extends: "htmlacademy/vanilla"
+extends: 'htmlacademy/vanilla'
 
 rules:
   indent: [error, tab]

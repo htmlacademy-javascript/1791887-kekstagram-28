@@ -3,12 +3,14 @@ lockfileVersion: 5.4
 specifiers:
   eslint: ^8.34.0
   eslint-config-htmlacademy: ^9.0.0
+  pristinejs: ^1.1.0
   vite: ^4.1.3
   vitest: ^0.28.5
 
 devDependencies:
   eslint: 8.34.0
   eslint-config-htmlacademy: 9.0.0_eslint@8.34.0
+  pristinejs: 1.1.0
   vite: 4.1.3
   vitest: 0.28.5
 
@@ -1449,6 +1451,10 @@ packages:
       ansi-regex: 5.0.1
       ansi-styles: 5.2.0
       react-is: 17.0.2
+    dev: true
+
+  /pristinejs/1.1.0:
+    resolution: {integrity: sha512-ardy/YEaZr5E1l0YM2eOkeQx0KoenQjBa7HkfX4Dt0PmqKhZUfyAIT9Qk23vGv4vvvWy/zb/eBe6sSsKUtahrg==}
     dev: true
 
   /prop-types/15.8.1:

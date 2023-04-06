@@ -10,23 +10,23 @@
   "bugs": {
     "url": "https://github.com/htmlacademy-javascript/1791887-kekstagram-28/issues"
   },
-	"devDependencies": {
-		"eslint": "^8.34.0",
-		"eslint-config-htmlacademy": "^9.0.0",
-		"vite": "^4.1.3",
-		"vitest": "^0.28.5"
-	},
+  "devDependencies": {
+    "eslint": "^8.34.0",
+    "eslint-config-htmlacademy": "^9.0.0",
+    "pristinejs": "^1.1.0",
+    "vite": "^4.1.3",
+    "vitest": "^0.28.5"
+  },
   "license": "MIT",
-  "dependencies": {},
   "scripts": {
-		"start": "vite",
-		"build": "vite build",
-		"preview": "vite preview",
-		"lint": "eslint js/",
-		"test": "vitest --dir js",
-		"test:once": "vitest run --dir js"
-	},
-	"volta": {
-		"node": "18.14.1"
-	}
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint js/",
+    "test": "vitest --dir js",
+    "test:once": "vitest run --dir js"
+  },
+  "volta": {
+    "node": "18.14.1"
+  }
 }
